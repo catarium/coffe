@@ -1,15 +1,13 @@
-import sys
-
 from PyQt5 import uic
 from PyQt5.QtWidgets import QDialog, QApplication
+from UI.addEditCoffeeForm import Ui_Dialog
 
 
-class Dialog(QDialog):
+class Dialog(QDialog, Ui_Dialog):
     def __init__(self, parent):
-        super(Dialog, self).__init__()
-        uic.loadUi('addEditCoffeeForm.ui', self)
+        super().__init__()
         self.parent = parent
-        # self.setupUi(self)
+        self.setupUi(self)
         self.initUI()
 
     def initUI(self):

@@ -3,14 +3,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from dialog import Dialog
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem
 import sqlite3
+from UI.main_form import Ui_MainWindow
 
 
-class MainForm(QMainWindow):
+class MainForm(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        # self.setupUi(self)
-        uic.loadUi('main.ui', self)
-        self.con = sqlite3.connect("coffe.sqlite")
+        self.setupUi(self)
+        self.con = sqlite3.connect("data/coffe.sqlite")
         self.initUI()
         self.dialog = Dialog(self)
 
