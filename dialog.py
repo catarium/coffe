@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QDialog, QApplication
 class Dialog(QDialog):
     def __init__(self, parent):
         super(Dialog, self).__init__()
-        uic.loadUi('dialog.ui', self)
+        uic.loadUi('addEditCoffeeForm.ui', self)
         self.parent = parent
         # self.setupUi(self)
         self.initUI()
